@@ -6,18 +6,10 @@ The Visual C++ help contains extensive help on almost every build error you rece
 
 That page tells you to:
 
-   1.
-
-      Click on the Project Menu -> example2 Properties.
-   2.
-
-      In the left pane, click the C/C++ folder.
-   3.
-
-      Click the Precompiled Headers node.
-   4.
-
-      Set this node to Not using Precompiled Headers.
+   1.  Click on the Project Menu -> example2 Properties.
+   2.  In the left pane, click the C/C++ folder.
+   3.  Click the Precompiled Headers node.
+   4.  Set this node to Not using Precompiled Headers.
 
 Follow these steps and your error should be resolved.
 
