@@ -1,0 +1,25 @@
+The Visual C++ help contains extensive help on almost every build error you receive, and how to solve each one. Whenever you receive a build error, it should be the first place you search for. To access it, click on the line which says:
+
+.\example2.cpp(8) : fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+
+), and then press F1. This will take you to the offline version of this page, which contains everything you want to know about error C1010.
+
+That page tells you to:
+
+   1.
+
+      Click on the Project Menu -> example2 Properties.
+   2.
+
+      In the left pane, click the C/C++ folder.
+   3.
+
+      Click the Precompiled Headers node.
+   4.
+
+      Set this node to Not using Precompiled Headers.
+
+Follow these steps and your error should be resolved.
+
+
+

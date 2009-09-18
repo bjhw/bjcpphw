@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>parameterize method name</TITLE>
+   <META NAME="Author" CONTENT="Paul Jakubik">
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (WinNT; U) [Netscape]">
+   <META NAME="Description" CONTENT="pattern for making method calls more flexible -- useful for callbacks">
+   <META NAME="KeyWords" CONTENT="pattern, c++, flexible callback">
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<H1>Callbacks in C++ </H1>
+
+<H1>
+<HR WIDTH="100%">parameterize method name - not C++ specific</H1>
+
+<H3>problem:</H3>
+
+<P>Naive callback implementations either constrain the user to a particular
+name of a method being called or require the user to write extra code to
+adapt the callback to specific situations.</P>
+
+<H3>context:</H3>
+
+<P>You are implementing a callback object where a single callback object
+will call back to a single method of a single object. </P>
+
+<H3>forces:</H3>
+
+<P>For the callback to be convenient to use, it must not require users
+to rewrite it or create additional adapters each time you use the callback.
+For the code to be widely useful, the callback must be able to adapt to
+many different client interfaces with different method names. </P>
+
+<H3>soultion:</H3>
+
+<P>Pass the name of the method to invoke as an argument to the constructor
+or initializer of the callback. When the callback is invoked, use the method
+name to determine what method of the object to call.</P>
+
+<H3>forces resolved:</H3>
+
+<P>The user is not required to write any additional code to change the
+name of the method called. By passing in a method name, a wider variety
+of classes can be called back without having method name clashes or problems
+with trying to extend third party libraries. </P>
+
+<H3>design rational:</H3>
+
+<P>Many languages provide some way to pass the name of a method around
+and later invoke it. In C++, a member function pointer is used. In more
+dynamic object systems like Smalltalk or CORBA, strings containing the
+name of the method can be passed. By making the method name a parameter
+used to initialize each callback object, the callback objects will be suitable
+for a wider variety of uses.</P>
+
+<P>There are some additional details to parameterizing method names in
+C++. C++ is a statically typed language, so not only the name of a method,
+but also the types of the arguments that the callback will pass and return
+must be specified. Further, in C++, the types of the arguments passed by
+the server to the callback must agree with the types of arguments the callback
+invokes the member function with. The callback can be templated to reflect
+the types of arguments it will pass. This templating is important to allow
+the callback to parameterize the full name of a method. </P>
+
+<P>[<A HREF="http://greenspun.com/com/jakubik/parameterize-method-name.html">View/Add Comments</A>]</P>
+
+<ADDRESS>
+<HR WIDTH="100%"><A HREF="callback.html">Callbacks in C++ </A></ADDRESS>
+
+<ADDRESS>Copyright &copy; 1996-2000 <a href="PaulJakubikResume.html">Paul Jakubik</a></ADDRESS>
+
+<ADDRESS>Created: 26 July 1996. Last update: 26 November 2000.</ADDRESS>
+
+<ADDRESS><A HREF="mailto:%20pauljakubik@yahoo.com">pauljakubik@yahoo.com</A>
+</ADDRESS>
+
+</BODY>
+</HTML>

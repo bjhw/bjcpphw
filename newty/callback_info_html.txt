@@ -1,0 +1,60 @@
+http://www.newty.de/jakubik/callback.html
+
+Callbacks in C++
+
+Information on a callback library, a callback paper, new patterns used by the paper, and complete source code for each step presented in the paper.
+Free C++ Callback Library - Callback 1.0
+
+A free library based on the final solution described in Callback Implementations in C++. This library allows callbacks to functions (function pointers), function objects, member functions, and member data that are function pointers or function objects. The library has a very permissive copyright to encourage its use.
+
+    * callback.1.0: directory with ~15 files totalling ~40 KB. Must use included perl script to generate C++ code.
+    * callback.1.0.noperl: directory with ~60 files totalling ~130 KB. Library preinstantiated for Callback0, Callback1, Callback2, Callback0wRet, Callback1wRet, and Callback2wRet. No perl script.
+    * callback.1.0.noperl.vcpp - directory with ~60 files totalling ~130 KB. Just like callback.1.0.noperl except files generated to be compatible with Microsoft Visual C++ 4.0.
+
+Paper - Callback Implementations in C++
+
+This paper explores several C++ callback implmentations using patterns.
+
+    * callback.pdf: ~107 KB pdf formatted paper -- can be viewed with Adobe Acrobat Reader
+
+New Patterns
+
+The following patterns are specific to C++ unless otherwise noted.
+
+    * parameterize method name - not C++ specific
+    * separate client and server interface specifications
+    * automatically detect types
+    * factor templates
+    * destroyer of type is restorer
+    * manual polymorphism
+    * dual purpose class (only if you have to)
+
+Source Code
+common evolution
+
+    * simple solution
+    * abstract client
+    * adapter
+    * external polymorphism
+    * parameterize method name
+    * separate client and server interface specification
+    * automatically detect types
+
+efficient callback
+
+    * factor template
+    * manual polymorphism
+    * dual purpose class
+
+simpler and more powerful callback
+
+    * handle body
+    * counted body
+    * null object
+
+[View/Add Comments]
+Callbacks in C++
+Copyright © 1996-2000 Paul Jakubik
+Created: 13 July 1996. Last update: 19 November 2000.
+pauljakubik@yahoo.com 
+
